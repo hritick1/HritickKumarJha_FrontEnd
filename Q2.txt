@@ -1,0 +1,46 @@
+Q2.What problems / warnings are there with code?
+There are 7 problems that I found out in the code they are as follows:
+
+1. "items: PropTypes.array(PropTypes.shapeOf({
+    text: PropTypes.string.isRequired,
+  })),"
+-> This should be changed ,here the array should be changed to ArrayOf, shapeOf should be changed to shape
+
+2. " {items.map((item, index) => ("
+-> Here before writing a map to items we need to do a null check which can be done using items && items.map()
+
+3."const [setSelectedIndex, selectedIndex] = useState();"
+-> Here in this use state first value shoulde be the variable and next will be the function so we need to swap setSelectedIndex with selectedIndex.
+
+4." isSelected={selectedIndex}"
+-> It is taking selectedIndex as value which is of Number type but it requires boolean type. So I changed it and checked whether selectedIndex matches the index and returns true on match else false.
+
+5."{items.map((item, index) => (
+        <SingleListItem
+          onClickHandler={() => handleClick(index)}
+          text={item.text}
+          index={index}
+          isSelected={selectedIndex}
+        />"
+->When we are using map we need to give a key with a value so that every item in the list are uniquely identified by it.Here I am giving key as index .
+
+6. " onClick={onClickHandler(index)}"
+->Here we directly cannot pass the handler to the onclick but we need to create an arrow function and then pass it.
+
+7."const WrappedListComponent = ({
+  items,
+}) => {"
+-> Here it is better to add an empty array to items.
+
+ALL these are the problems which I faced and then on resolving all I was able to run the component properly.
+At the end I am providing the file with code which is free from any error.
+
+
+
+
+
+
+
+
+
+ 

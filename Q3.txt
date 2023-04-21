@@ -1,0 +1,15 @@
+Q3.Please fix, optimize, and/or modify the component as much as you think is necessary.
+
+There are some things that can be optimized in the code they are as follows:
+
+1.We should use useCallBack in function like handleClick so that if the values are not changed it can return the old result which is stored in cache.This way the code can run more fast and efficiently.
+
+2.As the SingleListItem component requires isselected,text,index props so we should change it to .required to make it neccesary to be passed on.
+
+3. We can add a check in handleClick function so that if the selected index is not equal to index then only call it to set the state so that unnecessary it is not required to render the state.
+
+4.We can use ? chaining operator in items.map to prevent errors if the items prop is not defined or null
+
+5.Lastly We can directly memoized the WrappedSingleListItem and WrappedListComponent without declaring them in a different variable .
+
+Thus I think that all these optimisations can make the code more efficient and will compile and run much faster and without any errors
